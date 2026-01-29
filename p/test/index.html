@@ -1,30 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Test User</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NFC Contact</title>
 <style>
-   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:24px;background:#fff;color:#111}
-   .card{max-width:520px;margin:0 auto;border:1px solid #e9e9e9;border-radius:16px;padding:20px}
-   h1{margin:0 0 6px 0;font-size:22px}
-   .sub{margin:0 0 16px 0;color:#555}
-   .btn{display:block;text-align:center;text-decoration:none;padding:12px 14px;border-radius:12px;border:1px solid #111;color:#111;margin:10px 0;font-weight:600}
-   .btn.primary{background:#111;color:#fff}
-   .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+   /* =========================
+      Fonts
+   ========================= */
+   @font-face {
+     font-family: "UniversalSans";
+     src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+     font-weight: 400;
+     font-style: normal;
+   }
+   @font-face {
+     font-family: "UniversalSans";
+     src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+     font-weight: 500;
+     font-style: normal;
+   }
+   /* =========================
+      Base
+   ========================= */
+   * {
+     box-sizing: border-box;
+   }
+   body {
+     margin: 0;
+     min-height: 100vh;
+     background: #ffffff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family: "UniversalSans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+   }
+   /* =========================
+      Card
+   ========================= */
+   .card {
+     width: 360px;
+     background: #0f1115;
+     border-radius: 28px;
+     padding: 28px;
+     color: #ffffff;
+   }
+   /* =========================
+      Tesla logo
+   ========================= */
+   .logo {
+     width: 32px;
+     height: auto;
+     display: block;
+     margin-left: auto;
+     margin-bottom: 32px;
+   }
+   /* =========================
+      Text
+   ========================= */
+   h1 {
+     margin: 0 0 6px 0;
+     font-size: 32px;
+     line-height: 1.15;
+     font-weight: 500; /* Medium */
+     color: #ffffff;
+   }
+   .sub {
+     margin: 0 0 28px 0;
+     font-size: 16px;
+     font-weight: 400;
+     color: #E8E8EC;
+   }
+   /* =========================
+      Buttons
+   ========================= */
+   .grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 12px;
+     margin-bottom: 16px;
+   }
+   .btn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 52px;
+     border-radius: 14px;
+     background: #D4D4D8;
+     color: #ffffff;
+     text-decoration: none;
+     font-size: 16px;
+     font-weight: 400;
+   }
+   .btn.primary {
+     background: #ffffff;
+     color: #000000;
+     grid-column: 1 / -1;
+   }
+   .btn:active {
+     transform: scale(0.98);
+   }
 </style>
 </head>
 <body>
 <div class="card">
-<h1>Test User</h1>
-<p class="sub">Account Manager • Company</p>
-<a class="btn primary" href="./contact.vcf" download>Save contact</a>
+<!-- Tesla Logo -->
+<img src="./Tesla-t.svg" alt="Tesla" class="logo" />
+<!-- Name + title -->
+<h1>Test<br>User</h1>
+<p class="sub">Account Manager</p>
+<!-- Actions -->
 <div class="grid">
-<a class="btn" href="tel:+440000000000">Call</a>
+<a class="btn" href="tel:+447400000000">Call</a>
 <a class="btn" href="mailto:test@example.com">Email</a>
-<a class="btn" href="https://www.linkedin.com">LinkedIn</a>
-<a class="btn" href="https://example.com">Website</a>
+<a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+<a class="btn" href="https://example.com" target="_blank">Website</a>
 </div>
+<!-- Save contact -->
+<a class="btn primary" href="./contact.vcf">Save contact</a>
 </div>
 </body>
 </html>
