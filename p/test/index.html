@@ -5,190 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NFC Contact</title>
 <style>
-
-    /* Fonts */
-
-    @font-face {
-
-      font-family: "UniversalSans";
-
-      src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
-
-      font-weight: 400;
-
-      font-style: normal;
-
-    }
-
-    @font-face {
-
-      font-family: "UniversalSans";
-
-      src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
-
-      font-weight: 500;
-
-      font-style: normal;
-
-    }
-
-    * {
-
-      box-sizing: border-box;
-
-    }
-
-    body {
-
-      margin: 0;
-
-      min-height: 100vh;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      background: #ffffff;
-
-      font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
-
-    }
-
-    /* Card */
-
-    .card {
-
-      width: 340px;
-
-      background: #0b0d10;
-
-      border-radius: 22px;
-
-      padding: 36px 24px 40px; /* taller than before */
-
-      color: #ffffff;
-
-      position: relative;
-
-    }
-
-    /* Tesla logo */
-
-    .logo {
-
-      position: absolute;
-
-      top: 18px;
-
-      right: 18px;
-
-      width: 22px;
-
-      height: auto;
-
-    }
-
-    /* Name */
-
-    h1 {
-
-      margin: 0 0 6px 0;
-
-      font-size: 34px;
-
-      line-height: 1.1;
-
-      font-weight: 500; /* Medium */
-
-    }
-
-    /* Title */
-
-    .role {
-
-      margin: 0 0 28px 0;
-
-      font-size: 16px;
-
-      color: #E8E8EC;
-
-      font-weight: 400;
-
-    }
-
-    /* Buttons grid */
-
-    .grid {
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 12px;
-
-      margin-bottom: 18px;
-
-    }
-
-    .btn {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      height: 48px;
-
-      background: #D4D4D8;
-
-      color: #ffffff;
-
-      text-decoration: none;
-
-      font-size: 15px;
-
-      font-weight: 400;
-
-      border-radius: 10px; /* sharper corners */
-
-    }
-
-    .btn:active {
-
-      opacity: 0.85;
-
-    }
-
-    /* Save contact */
-
-    .save {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      height: 52px;
-
-      background: #ffffff;
-
-      color: #000000;
-
-      text-decoration: none;
-
-      font-size: 15px;
-
-      font-weight: 400;
-
-      border-radius: 12px; /* slightly sharper */
-
-      margin-top: 6px;
-
-    }
+   /* Fonts */
+   @font-face {
+     font-family: "UniversalSans";
+     src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+     font-weight: 400;
+     font-style: normal;
+   }
+   @font-face {
+     font-family: "UniversalSans";
+     src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+     font-weight: 500;
+     font-style: normal;
+   }
+   * {
+     box-sizing: border-box;
+   }
+   body {
+     margin: 0;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #ffffff;
+     font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
+   }
+   /* Card */
+   .card {
+     width: 340px;
+     background: #0b0d10;
+     border-radius: 22px;
+     padding: 36px 24px 40px; /* taller than before */
+     color: #ffffff;
+     position: relative;
+   }
+   /* Tesla logo */
+   .logo {
+     position: absolute;
+     top: 18px;
+     right: 18px;
+     width: 22px;
+     height: auto;
+   }
+   /* Name */
+   h1 {
+     margin: 0 0 6px 0;
+     font-size: 34px;
+     line-height: 1.1;
+     font-weight: 500; /* Medium */
+   }
+   /* Title */
+   .role {
+     margin: 0 0 28px 0;
+     font-size: 16px;
+     color: #E8E8EC;
+     font-weight: 400;
+   }
+   /* Buttons grid */
+   .grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 12px;
+     margin-bottom: 18px;
+   }
+   .btn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 48px;
+     background: #D4D4D8;
+     color: #ffffff;
+     text-decoration: none;
+     font-size: 15px;
+     font-weight: 400;
+     border-radius: 10px; /* sharper corners */
+   }
+   .btn:active {
+     opacity: 0.85;
+   }
+   /* Save contact */
+   .save {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 52px;
+     background: #ffffff;
+     color: #000000;
+     text-decoration: none;
+     font-size: 15px;
+     font-weight: 400;
+     border-radius: 12px; /* slightly sharper */
+     margin-top: 6px;
+   }
 </style>
 </head>
 <body>
@@ -206,6 +114,3 @@
 </div>
 </body>
 </html>
-LinkedIn: Log In or Sign Up
-1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.
- 
