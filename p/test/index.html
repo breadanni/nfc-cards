@@ -1,123 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NFC Contact</title>
 <style>
-   /* =========================
-      Fonts
-   ========================= */
-   @font-face {
-     font-family: "UniversalSans";
-     src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
-     font-weight: 400;
-     font-style: normal;
-   }
-   @font-face {
-     font-family: "UniversalSans";
-     src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
-     font-weight: 500;
-     font-style: normal;
-   }
-   /* =========================
-      Base
-   ========================= */
-   * {
-     box-sizing: border-box;
-   }
-   body {
-     margin: 0;
-     min-height: 100vh;
-     background: #ffffff;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     font-family: "UniversalSans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-   }
-   /* =========================
-      Card
-   ========================= */
-   .card {
-     width: 360px;
-     background: #0f1115;
-     border-radius: 28px;
-     padding: 28px;
-     color: #ffffff;
-   }
-   /* =========================
-      Tesla logo
-   ========================= */
-   .logo {
-     width: 32px;
-     height: auto;
-     display: block;
-     margin-left: auto;
-     margin-bottom: 32px;
-   }
-   /* =========================
-      Text
-   ========================= */
-   h1 {
-     margin: 0 0 6px 0;
-     font-size: 32px;
-     line-height: 1.15;
-     font-weight: 500; /* Medium */
-     color: #ffffff;
-   }
-   .sub {
-     margin: 0 0 28px 0;
-     font-size: 16px;
-     font-weight: 400;
-     color: #E8E8EC;
-   }
-   /* =========================
-      Buttons
-   ========================= */
-   .grid {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 12px;
-     margin-bottom: 16px;
-   }
-   .btn {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     height: 52px;
-     border-radius: 14px;
-     background: #D4D4D8;
-     color: #ffffff;
-     text-decoration: none;
-     font-size: 16px;
-     font-weight: 400;
-   }
-   .btn.primary {
-     background: #ffffff;
-     color: #000000;
-     grid-column: 1 / -1;
-   }
-   .btn:active {
-     transform: scale(0.98);
-   }
+
+    /* Fonts */
+
+    @font-face {
+
+      font-family: "UniversalSans";
+
+      src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+
+      font-weight: 400;
+
+      font-style: normal;
+
+    }
+
+    @font-face {
+
+      font-family: "UniversalSans";
+
+      src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+
+      font-weight: 500;
+
+      font-style: normal;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      background: #ffffff;
+
+      font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    }
+
+    /* Card */
+
+    .card {
+
+      width: 340px;
+
+      background: #0b0d10;
+
+      border-radius: 22px;
+
+      padding: 36px 24px 40px; /* taller than before */
+
+      color: #ffffff;
+
+      position: relative;
+
+    }
+
+    /* Tesla logo */
+
+    .logo {
+
+      position: absolute;
+
+      top: 18px;
+
+      right: 18px;
+
+      width: 22px;
+
+      height: auto;
+
+    }
+
+    /* Name */
+
+    h1 {
+
+      margin: 0 0 6px 0;
+
+      font-size: 34px;
+
+      line-height: 1.1;
+
+      font-weight: 500; /* Medium */
+
+    }
+
+    /* Title */
+
+    .role {
+
+      margin: 0 0 28px 0;
+
+      font-size: 16px;
+
+      color: #E8E8EC;
+
+      font-weight: 400;
+
+    }
+
+    /* Buttons grid */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+    }
+
+    .btn {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      height: 48px;
+
+      background: #D4D4D8;
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      font-weight: 400;
+
+      border-radius: 10px; /* sharper corners */
+
+    }
+
+    .btn:active {
+
+      opacity: 0.85;
+
+    }
+
+    /* Save contact */
+
+    .save {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      height: 52px;
+
+      background: #ffffff;
+
+      color: #000000;
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      font-weight: 400;
+
+      border-radius: 12px; /* slightly sharper */
+
+      margin-top: 6px;
+
+    }
 </style>
 </head>
 <body>
 <div class="card">
-<!-- Tesla Logo -->
 <img src="./Tesla-t.svg" alt="Tesla" class="logo" />
-<!-- Name + title -->
-<h1>Test<br>User</h1>
-<p class="sub">Account Manager</p>
-<!-- Actions -->
+<h1>Test<br />User</h1>
+<p class="role">Account Manager</p>
 <div class="grid">
 <a class="btn" href="tel:+447400000000">Call</a>
 <a class="btn" href="mailto:test@example.com">Email</a>
-<a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-<a class="btn" href="https://example.com" target="_blank">Website</a>
+<a class="btn" href="https://www.linkedin.com">LinkedIn</a>
+<a class="btn" href="https://example.com">Website</a>
 </div>
-<!-- Save contact -->
-<a class="btn primary" href="./contact.vcf">Save contact</a>
+<a class="save" href="./contact.vcf">Save contact</a>
 </div>
 </body>
 </html>
+LinkedIn: Log In or Sign Up
+1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.
+ 
