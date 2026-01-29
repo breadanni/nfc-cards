@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:User;Test;;;
+FN:Test User
+ORG:Tesla
+TITLE:Account Manager
+TEL;TYPE=CELL:+447400000000
+EMAIL:test@example.com
+URL:https://www.linkedin.com
+END:VCARD
