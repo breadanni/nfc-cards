@@ -5,250 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NFC Card</title>
 <style>
-
-    /* Fonts */
-
-    @font-face{
-
-      font-family:"UniversalSansDisplay";
-
-      src:url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
-
-      font-weight:400;
-
-      font-style:normal;
-
-      font-display:swap;
-
-    }
-
-    @font-face{
-
-      font-family:"UniversalSansDisplay";
-
-      src:url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
-
-      font-weight:500;
-
-      font-style:normal;
-
-      font-display:swap;
-
-    }
-
-    :root{
-
-      --bg:#ffffff;
-
-      --card:#0b0c0f;              /* deep black */
-
-      --name:#ffffff;
-
-      --role:#E8E8EC;
-
-      --btn:#66666A;
-
-      --btnText:#ffffff;
-
-      --saveBg:#ffffff;
-
-      --saveText:#000000;
-
-      --cardRadius:18px;           /* smaller corners */
-
-      --btnRadius:12px;            /* sharper buttons */
-
-    }
-
-    *{box-sizing:border-box}
-
-    html,body{height:100%}
-
-    body{
-
-      margin:0;
-
-      background:var(--bg);
-
-      font-family:"UniversalSansDisplay", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      padding:32px 18px;
-
-    }
-
-    .card{
-
-      position:relative;
-
-      width:min(520px, 92vw);
-
-      min-height:620px;            /* make the black area larger */
-
-      background:var(--card);
-
-      border-radius:var(--cardRadius);
-
-      padding:44px 34px 34px;
-
-      box-shadow:0 14px 40px rgba(0,0,0,.22);
-
-      overflow:hidden;
-
-    }
-
-    .tesla-mark{
-
-      position:absolute;
-
-      top:22px;
-
-      right:22px;
-
-      width:34px;
-
-      height:auto;
-
-      opacity:1;
-
-      pointer-events:none;
-
-    }
-
-    .name{
-
-      margin:72px 0 10px 0;
-
-      color:var(--name);
-
-      font-weight:500;             /* Medium for name */
-
-      font-size:56px;
-
-      line-height:0.98;
-
-      letter-spacing:-0.02em;
-
-    }
-
-    .role{
-
-      margin:0 0 28px 0;
-
-      color:var(--role);
-
-      font-weight:400;             /* Regular for rest */
-
-      font-size:22px;
-
-      line-height:1.15;
-
-    }
-
-    .grid{
-
-      display:grid;
-
-      grid-template-columns:1fr 1fr;
-
-      gap:14px;
-
-      margin:0 0 18px 0;
-
-    }
-
-    a.btn{
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      text-decoration:none;
-
-      background:var(--btn);
-
-      color:var(--btnText);
-
-      border-radius:var(--btnRadius);
-
-      height:64px;
-
-      font-size:20px;
-
-      font-weight:400;
-
-      letter-spacing:0;
-
-      -webkit-tap-highlight-color:transparent;
-
-      user-select:none;
-
-    }
-
-    a.btn:active{transform:scale(0.99)}
-
-    a.btn.primary{
-
-      width:100%;
-
-      margin-top:2px;
-
-      background:var(--saveBg);
-
-      color:var(--saveText);
-
-      border-radius:14px;          /* slightly rounder than small buttons */
-
-      height:72px;
-
-      font-size:20px;
-
-      font-weight:400;
-
-    }
-
-    /* Mobile tweaks */
-
-    @media (max-width:420px){
-
-      .card{min-height:600px; padding:42px 26px 28px;}
-
-      .name{font-size:50px; margin-top:68px;}
-
-      .role{font-size:20px;}
-
-      a.btn{height:62px; font-size:19px;}
-
-      a.btn.primary{height:70px;}
-
-    }
+   @font-face{
+     font-family:"UniversalSansDisplay";
+     src:url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+     font-weight:400;
+     font-display:swap;
+   }
+   @font-face{
+     font-family:"UniversalSansDisplay";
+     src:url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+     font-weight:500;
+     font-display:swap;
+   }
+   :root{
+     --card:#0b0c0f;
+     --btn:#66666a;
+     --btnText:#ffffff;
+     --role:#E8E8EC;
+   }
+   *{box-sizing:border-box}
+   body{
+     margin:0;
+     background:#fff;
+     font-family:"UniversalSansDisplay", system-ui, -apple-system, Arial, sans-serif;
+     display:flex;
+     justify-content:center;
+     padding:40px 18px;
+   }
+   .card{
+     position:relative;
+     width:min(520px, 92vw);
+     min-height:700px;            /* ⬅️ longer black area */
+     background:var(--card);
+     border-radius:18px;          /* sharper than before */
+     padding:52px 34px 56px;      /* ⬅️ more bottom space */
+     box-shadow:0 16px 44px rgba(0,0,0,.25);
+   }
+   .tesla-mark{
+     position:absolute;
+     top:22px;
+     right:22px;
+     width:34px;
+   }
+   .name{
+     margin:78px 0 10px;
+     color:#fff;
+     font-weight:500;
+     font-size:56px;
+     line-height:0.98;
+     letter-spacing:-0.02em;
+   }
+   .role{
+     margin:0 0 32px;
+     color:var(--role);
+     font-size:22px;
+     font-weight:400;
+   }
+   .grid{
+     display:grid;
+     grid-template-columns:1fr 1fr;
+     gap:14px;
+     margin-bottom:22px;
+   }
+   .btn{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     height:64px;
+     background:var(--btn);
+     color:var(--btnText);
+     text-decoration:none;
+     border-radius:12px;          /* sharper buttons */
+     font-size:20px;
+     font-weight:400;
+   }
+   .btn.primary{
+     background:#fff;
+     color:#000;
+     height:72px;
+     border-radius:14px;
+     font-size:20px;
+   }
+   @media (max-width:420px){
+     .card{
+       min-height:680px;
+       padding:50px 26px 54px;
+     }
+     .name{font-size:50px}
+     .role{font-size:20px}
+   }
 </style>
 </head>
 <body>
 <div class="card">
-<!-- Put Tesla-t.svg in /p/test/ and keep this path -->
-<img class="tesla-mark" src="./Tesla-t.svg" alt="" />
-<h1 class="name">Test<br/>User</h1>
+<img src="./Tesla-t.svg" class="tesla-mark" alt="" />
+<h1 class="name">Test<br>User</h1>
 <p class="role">Account Manager</p>
 <div class="grid">
 <a class="btn" href="tel:+447400000000">Call</a>
 <a class="btn" href="mailto:test@example.com">Email</a>
-<!-- IMPORTANT: open external links in a new tab so your page doesn't get replaced -->
 <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="https://example.com" target="_blank" rel="noopener">Website</a>
+<a class="btn" href="https://tesla.com/drive" target="_blank" rel="noopener">Website</a>
 </div>
-<!-- Put contact.vcf in /p/test/ and keep this path -->
 <a class="btn primary" href="./contact.vcf">Save contact</a>
 </div>
 </body>
 </html>
-LinkedIn: Log In or Sign Up
-1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.
- 
