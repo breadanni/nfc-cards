@@ -1,113 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NFC Card</title>
 <style>
-   @font-face{
-     font-family:"UniversalSansDisplay";
-     src:url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
-     font-weight:400;
-     font-display:swap;
-   }
-   @font-face{
-     font-family:"UniversalSansDisplay";
-     src:url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
-     font-weight:500;
-     font-display:swap;
-   }
-   :root{
-     --card:#0b0c0f;
-     --btn:#66666a;
-     --btnText:#ffffff;
-     --role:#E8E8EC;
-   }
-   *{box-sizing:border-box}
-   body{
-     margin:0;
-     background:#fff;
-     font-family:"UniversalSansDisplay", system-ui, -apple-system, Arial, sans-serif;
-     display:flex;
-     justify-content:center;
-     padding:40px 18px;
-   }
-   .card{
-     position:relative;
-     width:min(520px, 92vw);
-     min-height:700px;            /* ⬅️ longer black area */
-     background:var(--card);
-     border-radius:18px;          /* sharper than before */
-     padding:52px 34px 56px;      /* ⬅️ more bottom space */
-     box-shadow:0 16px 44px rgba(0,0,0,.25);
-   }
-   .tesla-mark{
-     position:absolute;
-     top:22px;
-     right:22px;
-     width:34px;
-   }
-   .name{
-     margin:78px 0 10px;
-     color:#fff;
-     font-weight:500;
-     font-size:56px;
-     line-height:0.98;
-     letter-spacing:-0.02em;
-   }
-   .role{
-     margin:0 0 32px;
-     color:var(--role);
-     font-size:22px;
-     font-weight:400;
-   }
-   .grid{
-     display:grid;
-     grid-template-columns:1fr 1fr;
-     gap:14px;
-     margin-bottom:22px;
-   }
-   .btn{
-     display:flex;
-     align-items:center;
-     justify-content:center;
-     height:64px;
-     background:var(--btn);
-     color:var(--btnText);
-     text-decoration:none;
-     border-radius:12px;          /* sharper buttons */
-     font-size:20px;
-     font-weight:400;
-   }
-   .btn.primary{
-     background:#fff;
-     color:#000;
-     height:72px;
-     border-radius:14px;
-     font-size:20px;
-   }
-   @media (max-width:420px){
-     .card{
-       min-height:680px;
-       padding:50px 26px 54px;
-     }
-     .name{font-size:50px}
-     .role{font-size:20px}
-   }
+
+/* ---------- Fonts ---------- */
+
+@font-face {
+
+  font-family: "UniversalSans";
+
+  src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+
+  font-weight: 400;
+
+}
+
+@font-face {
+
+  font-family: "UniversalSans";
+
+  src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+
+  font-weight: 500;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+/* ---------- Card ---------- */
+
+.card {
+
+  width: 360px;
+
+  min-height: 560px; /* makes black area longer */
+
+  background: linear-gradient(180deg, #0b0c0f 0%, #121317 100%);
+
+  border-radius: 22px; /* sharper corners */
+
+  padding: 28px;
+
+  position: relative;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  width: 26px;
+
+}
+
+/* ---------- Text ---------- */
+
+.name {
+
+  font-weight: 500;
+
+  font-size: 44px;
+
+  line-height: 1.05;
+
+  color: #ffffff;
+
+  margin: 64px 0 10px 0;
+
+}
+
+.role {
+
+  font-size: 18px;
+
+  color: #E8E8EC;
+
+  margin-bottom: 28px;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+
+}
+
+.btn {
+
+  background: #66666A;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  padding: 14px 0;
+
+  border-radius: 12px; /* sharper buttons */
+
+  font-size: 16px;
+
+}
+
+/* ---------- Save Contact ---------- */
+
+.save {
+
+  display: block;
+
+  background: #ffffff;
+
+  color: #000000;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  padding: 16px 0;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  margin-top: 6px;
+
+}
+
+/* ---------- Mobile safety ---------- */
+
+a {
+
+  -webkit-tap-highlight-color: transparent;
+
+}
 </style>
 </head>
 <body>
 <div class="card">
-<img src="./Tesla-t.svg" class="tesla-mark" alt="" />
-<h1 class="name">Test<br>User</h1>
-<p class="role">Account Manager</p>
+<img src="./Tesla-t.svg" class="logo" alt="Tesla" />
+<div class="name">Test<br>User</div>
+<div class="role">Account Manager</div>
 <div class="grid">
 <a class="btn" href="tel:+447400000000">Call</a>
 <a class="btn" href="mailto:test@example.com">Email</a>
-<a class="btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="https://tesla.com/drive" target="_blank" rel="noopener">Website</a>
+<a class="btn ext" href="https://www.linkedin.com">LinkedIn</a>
+<a class="btn ext" href="https://tesla.com/drive">Website</a>
 </div>
-<a class="btn primary" href="./contact.vcf">Save contact</a>
+<a class="save" href="./contact.vcf">Save contact</a>
 </div>
+<!-- ---------- Fix iOS Safari split-page bug ---------- -->
+<script>
+
+  document.querySelectorAll('a.ext').forEach(link => {
+
+    link.setAttribute('rel', 'noopener noreferrer');
+
+    link.addEventListener('click', e => {
+
+      e.preventDefault();
+
+      window.open(link.href, '_blank', 'noopener,noreferrer');
+
+    });
+
+  });
+</script>
 </body>
 </html>
+LinkedIn: Log In or Sign Up
+1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.
+ 
