@@ -5,207 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NFC Card</title>
 <style>
-
-/* ---------- Fonts ---------- */
-
 @font-face {
-
-  font-family: "UniversalSans";
-
-  src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
-
-  font-weight: 400;
-
+ font-family: "UniversalSans";
+ src: url("fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+ font-weight: 400;
 }
-
 @font-face {
-
-  font-family: "UniversalSans";
-
-  src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
-
-  font-weight: 500;
-
+ font-family: "UniversalSans";
+ src: url("fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+ font-weight: 500;
 }
-
 * {
-
-  box-sizing: border-box;
-
+ box-sizing: border-box;
 }
-
 body {
-
-  margin: 0;
-
-  min-height: 100vh;
-
-  background: #ffffff;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
-
+ margin: 0;
+ min-height: 100vh;
+ background: #ffffff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
-
-/* ---------- Card ---------- */
-
 .card {
-
-  width: 360px;
-
-  min-height: 560px; /* makes black area longer */
-
-  background: linear-gradient(180deg, #0b0c0f 0%, #121317 100%);
-
-  border-radius: 22px; /* sharper corners */
-
-  padding: 28px;
-
-  position: relative;
-
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-
+ position: relative;
+ width: 340px;
+ padding: 36px 28px 40px;
+ background: radial-gradient(circle at top, #121212, #000000);
+ border-radius: 18px;
+ box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
-
-/* ---------- Logo ---------- */
-
 .logo {
-
-  position: absolute;
-
-  top: 18px;
-
-  right: 18px;
-
-  width: 26px;
-
+ position: absolute;
+ top: 20px;
+ right: 20px;
+ width: 22px;
 }
-
-/* ---------- Text ---------- */
-
-.name {
-
-  font-weight: 500;
-
-  font-size: 44px;
-
-  line-height: 1.05;
-
-  color: #ffffff;
-
-  margin: 64px 0 10px 0;
-
+h1 {
+ margin: 0;
+ font-size: 34px;
+ font-weight: 500;
+ color: #ffffff;
+ line-height: 1.05;
 }
-
 .role {
-
-  font-size: 18px;
-
-  color: #E8E8EC;
-
-  margin-bottom: 28px;
-
+ margin-top: 10px;
+ font-size: 16px;
+ font-weight: 400;
+ color: #E8E8EC;
 }
-
-/* ---------- Buttons ---------- */
-
 .grid {
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 14px;
-
-  margin-bottom: 22px;
-
+ margin-top: 26px;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 14px;
 }
-
 .btn {
-
-  background: #66666A;
-
-  color: #ffffff;
-
-  text-align: center;
-
-  text-decoration: none;
-
-  padding: 14px 0;
-
-  border-radius: 12px; /* sharper buttons */
-
-  font-size: 16px;
-
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 48px;
+ border-radius: 12px;
+ background: #66666A;
+ color: #ffffff;
+ font-size: 15px;
+ font-weight: 400;
+ text-decoration: none;
 }
-
-/* ---------- Save Contact ---------- */
-
 .save {
-
-  display: block;
-
-  background: #ffffff;
-
-  color: #000000;
-
-  text-align: center;
-
-  text-decoration: none;
-
-  padding: 16px 0;
-
-  border-radius: 14px;
-
-  font-size: 16px;
-
-  margin-top: 6px;
-
-}
-
-/* ---------- Mobile safety ---------- */
-
-a {
-
-  -webkit-tap-highlight-color: transparent;
-
+ margin-top: 22px;
+ height: 54px;
+ border-radius: 14px;
+ background: #ffffff;
+ color: #000000;
+ font-weight: 500;
 }
 </style>
 </head>
 <body>
 <div class="card">
-<img src="./Tesla-t.svg" class="logo" alt="Tesla" />
-<div class="name">Test<br>User</div>
+<img src="Tesla-t.svg" class="logo" alt="Tesla">
+<h1>Test<br>User</h1>
 <div class="role">Account Manager</div>
 <div class="grid">
 <a class="btn" href="tel:+447400000000">Call</a>
 <a class="btn" href="mailto:test@example.com">Email</a>
-<a class="btn ext" href="https://www.linkedin.com">LinkedIn</a>
-<a class="btn ext" href="https://tesla.com/drive">Website</a>
+<a class="btn" href="https://www.linkedin.com">LinkedIn</a>
+<a class="btn" href="https://www.tesla.com/drive">Website</a>
 </div>
-<a class="save" href="./contact.vcf">Save contact</a>
+<a class="btn save" href="contact.vcf">Save contact</a>
 </div>
-<!-- ---------- Fix iOS Safari split-page bug ---------- -->
-<script>
-
-  document.querySelectorAll('a.ext').forEach(link => {
-
-    link.setAttribute('rel', 'noopener noreferrer');
-
-    link.addEventListener('click', e => {
-
-      e.preventDefault();
-
-      window.open(link.href, '_blank', 'noopener,noreferrer');
-
-    });
-
-  });
-</script>
 </body>
 </html>
