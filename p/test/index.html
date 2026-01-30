@@ -8,18 +8,17 @@
 /* ---------- Fonts ---------- */
 @font-face {
  font-family: "UniversalSans";
- src: url("../assets/fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+ src: url("./assets/fonts/UniversalSans-Display-Regular.woff2") format("woff2");
  font-weight: 400;
 }
 @font-face {
  font-family: "UniversalSans";
- src: url("../assets/fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+ src: url("./assets/fonts/UniversalSans-Display-Medium.woff2") format("woff2");
  font-weight: 500;
 }
 * {
  box-sizing: border-box;
 }
-/* ---------- Page ---------- */
 body {
  margin: 0;
  min-height: 100vh;
@@ -28,51 +27,50 @@ body {
  align-items: center;
  justify-content: center;
  font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
- font-weight: 400;
 }
 /* ---------- Card ---------- */
 .card {
- width: 360px;
- min-height: 560px; /* KEEP THIS – long black area */
+ width: 400px;              /* 🔥 BIGGER CARD */
+ min-height: 640px;         /* 🔥 TALLER BLACK AREA */
  background: linear-gradient(180deg, #0b0c0f 0%, #121317 100%);
  border-radius: 22px;
- padding: 28px;
+ padding: 32px;
  position: relative;
  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 /* ---------- Logo ---------- */
 .logo {
  position: absolute;
- top: 18px;
- right: 18px;
- width: 26px;
+ top: 20px;
+ right: 20px;
+ width: 28px;
 }
 /* ---------- Text ---------- */
 .name {
  font-weight: 500;
- font-size: 44px;
+ font-size: 46px;
  line-height: 1.05;
  color: #ffffff;
- margin: 64px 0 10px 0;
+ margin: 72px 0 12px 0;
 }
 .role {
  font-size: 18px;
  color: #E8E8EC;
- margin-bottom: 28px;
+ margin-bottom: 32px;
 }
 /* ---------- Buttons ---------- */
 .grid {
  display: grid;
  grid-template-columns: 1fr 1fr;
- gap: 14px;
- margin-bottom: 22px;
+ gap: 16px;
+ margin-bottom: 26px;
 }
 .btn {
  background: #66666A;
  color: #ffffff;
  text-align: center;
  text-decoration: none;
- padding: 14px 0;
+ padding: 16px 0;
  border-radius: 12px;
  font-size: 16px;
 }
@@ -83,12 +81,11 @@ body {
  color: #000000;
  text-align: center;
  text-decoration: none;
- padding: 16px 0;
+ padding: 18px 0;
  border-radius: 14px;
  font-size: 16px;
- margin-top: 6px;
 }
-/* ---------- Mobile tap ---------- */
+/* ---------- Mobile safety ---------- */
 a {
  -webkit-tap-highlight-color: transparent;
 }
@@ -96,7 +93,7 @@ a {
 </head>
 <body>
 <div class="card">
-<img src="../assets/Tesla-t.svg" class="logo" alt="Tesla" />
+<img src="./assets/Tesla-t.svg" class="logo" alt="Tesla" />
 <div class="name">Test<br>User</div>
 <div class="role">Account Manager</div>
 <div class="grid">
