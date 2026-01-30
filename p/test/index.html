@@ -8,12 +8,12 @@
 /* ---------- Fonts ---------- */
 @font-face {
  font-family: "UniversalSans";
- src: url("./assets/fonts/UniversalSans-Display-Regular.woff2") format("woff2");
+ src: url("./fonts/UniversalSans-Display-Regular.woff2") format("woff2");
  font-weight: 400;
 }
 @font-face {
  font-family: "UniversalSans";
- src: url("./assets/fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+ src: url("./fonts/UniversalSans-Display-Medium.woff2") format("woff2");
  font-weight: 500;
 }
 * {
@@ -27,31 +27,32 @@ body {
  align-items: center;
  justify-content: center;
  font-family: "UniversalSans", -apple-system, BlinkMacSystemFont, sans-serif;
+ font-weight: 400;
 }
 /* ---------- Card ---------- */
 .card {
- width: 400px;              /* 🔥 BIGGER CARD */
- min-height: 640px;         /* 🔥 TALLER BLACK AREA */
+ width: 360px;
+ min-height: 620px; /* keeps long black area */
  background: linear-gradient(180deg, #0b0c0f 0%, #121317 100%);
  border-radius: 22px;
- padding: 32px;
+ padding: 28px;
  position: relative;
  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 /* ---------- Logo ---------- */
 .logo {
  position: absolute;
- top: 20px;
- right: 20px;
- width: 28px;
+ top: 18px;
+ right: 18px;
+ width: 26px;
 }
 /* ---------- Text ---------- */
 .name {
  font-weight: 500;
- font-size: 46px;
+ font-size: 48px;        /* ⬆ bigger name */
  line-height: 1.05;
  color: #ffffff;
- margin: 72px 0 12px 0;
+ margin: 92px 0 10px 0; /* ⬇ pushes content down */
 }
 .role {
  font-size: 18px;
@@ -62,7 +63,7 @@ body {
 .grid {
  display: grid;
  grid-template-columns: 1fr 1fr;
- gap: 16px;
+ gap: 14px;
  margin-bottom: 26px;
 }
 .btn {
@@ -70,7 +71,7 @@ body {
  color: #ffffff;
  text-align: center;
  text-decoration: none;
- padding: 16px 0;
+ padding: 14px 0;
  border-radius: 12px;
  font-size: 16px;
 }
@@ -81,11 +82,12 @@ body {
  color: #000000;
  text-align: center;
  text-decoration: none;
- padding: 18px 0;
+ padding: 16px 0;
  border-radius: 14px;
  font-size: 16px;
+ margin-top: 8px;
 }
-/* ---------- Mobile safety ---------- */
+/* ---------- Mobile ---------- */
 a {
  -webkit-tap-highlight-color: transparent;
 }
@@ -93,7 +95,7 @@ a {
 </head>
 <body>
 <div class="card">
-<img src="../../assets/Tesla-t.svg" class="logo" alt="Tesla" />
+<img src="./Tesla-t.svg" class="logo" alt="Tesla" />
 <div class="name">Test<br>User</div>
 <div class="role">Account Manager</div>
 <div class="grid">
@@ -104,7 +106,7 @@ a {
 </div>
 <a class="save" href="./contact.vcf">Save contact</a>
 </div>
-<!-- ---------- Fix iOS Safari split-page bug ---------- -->
+<!-- ---------- iOS Safari external link fix ---------- -->
 <script>
  document.querySelectorAll('a.ext').forEach(link => {
    link.setAttribute('rel', 'noopener noreferrer');
