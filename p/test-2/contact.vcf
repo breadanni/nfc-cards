@@ -1,13 +1,11 @@
-concat(
-'BEGIN:VCARD', decodeUriComponent('%0D%0A'),
-'VERSION:3.0', decodeUriComponent('%0D%0A'),
-'N:', Test 2, ';;;;', decodeUriComponent('%0D%0A'),
-'FN:', Test 2, decodeUriComponent('%0D%0A'),
-'ORG:Tesla', decodeUriComponent('%0D%0A'),
-'TITLE:', Gitchy Gitchy Yaya DAD, decodeUriComponent('%0D%0A'),
-'TEL;TYPE=CELL:', +447763768291, decodeUriComponent('%0D%0A'),
-'EMAIL;TYPE=INTERNET;TYPE=WORK:', annfan@tesla.com, decodeUriComponent('%0D%0A'),
-'URL:https://tesla.com/drive', decodeUriComponent('%0D%0A'),
-'X-SOCIALPROFILE;TYPE=linkedin:', apple.com, decodeUriComponent('%0D%0A'),
-'END:VCARD', decodeUriComponent('%0D%0A')
-)
+BEGIN:VCARD
+VERSION:3.0
+N:Test 2;;;;
+FN:Test 2
+ORG:Tesla
+TITLE:Gitchy Gitchy Yaya DAD
+TEL;TYPE=CELL:+447763768291
+EMAIL;TYPE=INTERNET;TYPE=WORK:annfan@tesla.com
+URL:https://tesla.com/drive
+X-SOCIALPROFILE;TYPE=linkedin:apple.com
+END:VCARD
