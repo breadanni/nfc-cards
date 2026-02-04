@@ -4,10 +4,10 @@ Files:
 - index.html
 - contact.vcf
 Next step (manual publish to GitHub Pages):
-1) Copy index.html + contact.vcf into repo path: /p/', anni-fan, '/
+1) Copy index.html + contact.vcf into repo path: /p/', test-2, '/
 2) Commit + push
 3) Final public link will be:
-https://breadanni.github.io/nfc-cards/p/', anni-fan, '/
+https://breadanni.github.io/nfc-cards/p/', test-2, '/
 Website button is fixed to:
 https://tesla.com/drive
 '
