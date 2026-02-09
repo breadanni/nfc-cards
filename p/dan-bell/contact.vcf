@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Dan Bell;;;;
+FN:Dan Bell
+ORG:Tesla
+TITLE:Senior Account Manager
+TEL;TYPE=CELL:07408 851171
+EMAIL;TYPE=INTERNET;TYPE=WORK:danbell@tesla.com
+URL:https://tesla.com/drive
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/danjbell2/
+END:VCARD

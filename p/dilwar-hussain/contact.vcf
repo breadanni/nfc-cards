@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Dilwar Hussain;;;;
+FN:Dilwar Hussain
+ORG:Tesla
+TITLE:Corporate Account Manager
+TEL;TYPE=CELL:07408811371
+EMAIL;TYPE=INTERNET;TYPE=WORK:dhussain@tesla.com
+URL:https://tesla.com/drive
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/dilwar-hussain-8a374b150/
+END:VCARD

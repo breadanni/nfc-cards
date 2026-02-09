@@ -1,0 +1,13 @@
+concat(
+'Handoff package generated.
+Files:
+- index.html
+- contact.vcf
+Next step (manual publish to GitHub Pages):
+1) Copy index.html + contact.vcf into repo path: /p/arron-singh-lal-loey/
+2) Commit + push
+3) Final public link will be:
+https://breadanni.github.io/nfc-cards/p/arron-singh-lal-loey/
+Website button is fixed to:
+https://tesla.com/drive
+'
